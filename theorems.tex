@@ -1,0 +1,77 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{enumitem}
+
+\title{Theorems}
+\author{Author Name}
+\date{\today}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem*{definition*}{Definition}
+
+\begin{document}
+\maketitle
+
+\section[1]{Preliminaries}
+\setcounter{subsection}{3}
+\subsection{Open Sets, Closed Sets and Borel Sets in $\mathbb{R}$}
+\begin{definition*}[Sup and Inf of a Sequence of Sets]
+    Let ${\{ A_n \}}_{n=1}^{\infty}$ be a countable sequence of sets that belong to a $\sigma$-algebra $\mathcal{A}$.
+    Then we define the following sets that belong to $\mathcal{A}$:
+    \[
+        \limsup{\{ A_n \}}_{n=1}^{\infty} = \bigcap_{k=1}^\infty \bigg[\bigcup_{n=k}^\infty A_n \bigg] \; \text{and} \;
+        \liminf{\{ A_n \}}_{n=1}^{\infty} = \bigcup_{k=1}^\infty \bigg[\bigcap_{n=k}^\infty A_n \bigg]
+    \]
+\end{definition*}
+
+\subsection{Sequences of Real Numbers}
+\setcounter{theorem}{14}
+\begin{theorem}[The Monotone Convergence Theorem]
+    A monotone sequence of real numbers converges if and only if it is bounded.
+\end{theorem}
+
+\begin{theorem}[The Bolzano-Weierstrass Theorem]
+    Every bounded sequence of real numbers has a convergent subsequence.
+\end{theorem}
+
+\begin{theorem}[The Cauchy Convergence Criterion for Real Sequences]
+\end{theorem}
+
+\begin{definition*}[Limit-Superior and Limit-Inferior]
+    Given a sequence ${(a_n)}_n$ we define:
+    \[
+        \limsup a_n = \lim_{n \to \infty} [ \sup {\{a_k : k \geq n\}} ]
+    \]
+    and:
+    \[
+        \liminf a_n = \lim_{n \to \infty} [ \inf {\{a_k : k \geq n\}} ]
+    \]
+\end{definition*}
+
+\stepcounter{theorem}{18}
+\begin{proposition}
+    
+\end{proposition}
+\begin{enumerate}[label= (\roman*), leftmargin=*]
+    \item $\limsup a_n = \ell \in \mathbb{R}$ if and only if for all $\epsilon > 0$, $a_n >  \ell - \epsilon$ for infinitely many indices and $a_n > \ell + \epsilon$ for finitely many indices.
+    \item $\limsup a_n = \infty$ iff ${(a_n)}_n$ is not bounded above.
+    \item \[
+                \limsup{\{a_n\}} = -\liminf{\{-a_n\}}
+          \]
+    \item A sequence of real numbers $(a_n)$ converges to an extended real number $a$ iff
+    \[
+        \limsup{\{a_n\}} = \liminf{\{a_n\}} = a
+    \]
+    \item If $a_n \leq b_n$ for all $n$,
+    \[
+        \limsup {\{a_n\}} \leq \liminf {\{b_n\}}
+    \]
+\end{enumerate}
+
+\end{document}
+
