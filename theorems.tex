@@ -13,6 +13,7 @@
 \newtheorem{lemma}[theorem]{Lemma}
 \newtheorem{proposition}[theorem]{Proposition}
 \newtheorem*{definition*}{Definition}
+\newtheorem*{proposition*}{Proposition}
 
 \begin{document}
 \maketitle
@@ -44,7 +45,7 @@
 \end{definition*}
 
 \begin{definition*}[$G_\delta$ set]
-    Any set that is a \textbf{countable union of open sets} is called a $G_\delta$ set.
+    Any set that is a \textbf{countable intersection of open sets} is called a $G_\delta$ set.
 \end{definition*}
 
 \begin{definition*}[$F_\sigma$ set]
@@ -75,10 +76,6 @@
     \]
 \end{definition*}
 
-\stepcounter{theorem}{18}
-\begin{proposition}
-    
-\end{proposition}
 \begin{enumerate}[label= (\roman*), leftmargin=*]
     \item $\limsup a_n = \ell \in \mathbb{R}$ if and only if for all $\epsilon > 0$, $a_n >  \ell - \epsilon$ for infinitely many indices and $a_n > \ell + \epsilon$ for finitely many indices.
     \item $\limsup a_n = \infty$ iff ${(a_n)}_n$ is not bounded above.
@@ -94,6 +91,31 @@
         \limsup {\{a_n\}} \leq \liminf {\{b_n\}}
     \]
 \end{enumerate}
+
+\section[2]{Lebesgue Measure}
+\subsection[2.2]{The Lebesgue Outer Measure}
+\begin{definition*}[The Lebegue Outer Measure]
+    \begin{enumerate}
+        \item For each interval $I \subseteq \mathbb{R}$ we define $\ell(I)$ to be its length.
+        \item For each set $A \subseteq \mathbb{R}$ we define a number:
+        \[
+            m^*(A) = \inf \bigg\{\sum_{i=1}^{\infty} I_i \bigg| A \subseteq \bigcup_{i=1}^\infty I_i  \bigg\}
+        \]
+    \end{enumerate}
+\end{definition*}
+It follows immediately that $m^*$ is monotone w.r.t inclusion of sets, and that $m^*(\emptyset) = 0$.
+
+\begin{proposition*}
+    The outer measure of an interval is its length
+\end{proposition*}
+\begin{proposition*}
+    The outer measure is translation invariant
+\end{proposition*}
+\begin{proposition*}
+    The outer measure is countably sub-additive
+\end{proposition*}
+With these three propositions we're ready to find a $\sigma$-algebra for this outer measure becomes a measure.
+\subsection{The $\sigma$-algebra of Lebesgue Measurable Sets}
 
 \end{document}
 
