@@ -80,16 +80,16 @@
     \item $\limsup a_n = \ell \in \mathbb{R}$ if and only if for all $\epsilon > 0$, $a_n >  \ell - \epsilon$ for infinitely many indices and $a_n > \ell + \epsilon$ for finitely many indices.
     \item $\limsup a_n = \infty$ iff ${(a_n)}_n$ is not bounded above.
     \item \[
-                \limsup{\{a_n\}} = -\liminf{\{-a_n\}}
+              \limsup{\{a_n\}} = -\liminf{\{-a_n\}}
           \]
     \item A sequence of real numbers $(a_n)$ converges to an extended real number $a$ iff
-    \[
-        \limsup{\{a_n\}} = \liminf{\{a_n\}} = a
-    \]
+          \[
+              \limsup{\{a_n\}} = \liminf{\{a_n\}} = a
+          \]
     \item If $a_n \leq b_n$ for all $n$,
-    \[
-        \limsup {\{a_n\}} \leq \liminf {\{b_n\}}
-    \]
+          \[
+              \limsup {\{a_n\}} \leq \liminf {\{b_n\}}
+          \]
 \end{enumerate}
 
 \section[2]{Lebesgue Measure}
@@ -98,9 +98,9 @@
     \begin{enumerate}
         \item For each interval $I \subseteq \mathbb{R}$ we define $\ell(I)$ to be its length.
         \item For each set $A \subseteq \mathbb{R}$ we define a number:
-        \[
-            m^*(A) = \inf \bigg\{\sum_{i=1}^{\infty} I_i \bigg| A \subseteq \bigcup_{i=1}^\infty I_i  \bigg\}
-        \]
+              \[
+                  m^*(A) = \inf \bigg\{\sum_{i=1}^{\infty} I_i \bigg| A \subseteq \bigcup_{i=1}^\infty I_i  \bigg\}
+              \]
     \end{enumerate}
 \end{definition*}
 It follows immediately that $m^*$ is monotone w.r.t inclusion of sets, and that $m^*(\emptyset) = 0$.
@@ -115,7 +115,43 @@ It follows immediately that $m^*$ is monotone w.r.t inclusion of sets, and that 
     The outer measure is countably sub-additive
 \end{proposition*}
 With these three propositions we're ready to find a $\sigma$-algebra for this outer measure becomes a measure.
-\subsection{The $\sigma$-algebra of Lebesgue Measurable Sets}
+\subsection[2.3]{The $\sigma$-algebra of Lebesgue Measurable Sets}
+\begin{definition*}[Lebesgue Measurable Set]
+    A set $E \subseteq \mathbb{R}$ is called Lebesgue measurable if for every set $A \subseteq \mathbb{R}$ we have:
+    \[
+        m^*(A) = m^*(E \cap A) + m^*(E \cap A^c)
+    \]
+\end{definition*}
+
+Reminder: To prove that $E$ is measurable, it suffices to show that for every set $A$ we have:
+\[
+    m^*(A) \geq m^*(E \cap A) + m^*(E \cap A^c)
+\]
+(Remember that the opposite inequality always holds by sub-additivity of $m^*$)
+
+\setcounter{theorem}{3}
+\begin{proposition}
+    Any set of outer measure zero is measurable.
+\end{proposition}
+
+\begin{proposition}
+    The union of a finite collection of measurable sets is measurable.
+\end{proposition}
+
+\begin{proposition}
+    Let $A$ be any set and $\{E_k\}_{k=1}^n$ a finite collection of measurable sets. Then:
+    \[
+        m^*\Bigg( A \cap \Bigg[\bigcup_{k=1}^n E_k\Bigg] \Bigg) = \sum_{k=1}^n m^*(A \cap E_k)
+    \]
+
+    And in particular:
+    \[
+        m^*\Bigg(\bigcup_{k=1}^n E_k \Bigg) = \sum_{k=1}^n m^*(E_k)
+    \]
+\end{proposition}
+
+\begin{proposition}
+    The union of a countable collection of measurable sets is measurable.
+\end{proposition}
 
 \end{document}
-
